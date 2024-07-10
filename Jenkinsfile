@@ -9,7 +9,7 @@ pipeline {
         ansiColor('xterm')
     }
     parameters {
-        string(name: 'appversion', defaultValue: '1.00', description: 'What is my version?')
+        string(name: 'appversion', defaultValue: '1.0.0', description: 'What is my version?')
 
     }
     environment {
