@@ -19,12 +19,14 @@ pipeline {
 
     stages {
         stage ('print the version') {
+            steps {
             sh """
                 echo "what is y version is ${params.appversion}"
             """
 
         }
             }
+    }
         
     
     post { 
