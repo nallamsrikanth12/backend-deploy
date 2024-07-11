@@ -26,6 +26,33 @@ pipeline {
 
         }
             }
+        stage ('init') {
+            steps {
+            sh """
+                cd terraform
+                terraform init -reconfigure
+            """
+
+        }
+            }
+        stage ('plan') {
+            steps {
+            sh """
+                cd terraform
+               terraform plan -var="app_version=${params.appversion}"
+            """
+
+        }
+            }
+        //  stage ('deploy') {
+        //     steps {
+        //     sh """
+        //         cd terraorm
+        //         terraform apply -auto-approve
+        //     """
+
+        // }
+        //     }
     }
         
     
