@@ -1,0 +1,39 @@
+pipeline {
+    agent {
+        label 'Agent-1'
+    }
+    options {
+        timeout(time: 1, unit: 'HOURS')
+    }
+    parameters {
+          string(name: 'appversion', defaultValue: '1.0.0', description: 'this is my appversion?')
+
+    }
+    environment {
+        app_version = ''
+        nexusUrl = nexusUrl = 'nexus.srikantheswar.online:8081'
+    }
+    stages {
+        stage('Build') { 
+            steps {
+                sh """
+                    echo 'this is testing'
+                    echo  "print my version ${params.appversion}"
+
+
+                """
+            }
+        }
+    }
+    post {
+        always {
+            echo 'i will run aiways'
+        }
+        success {
+            echo 'i will pipeline is success'
+        }
+        failure {
+            echo 'i will pipeline is failure'
+        }
+    }  
+}
