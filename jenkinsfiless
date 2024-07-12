@@ -11,7 +11,7 @@ pipeline {
     }
     environment {
         app_version = ''
-        nexusUrl = nexusUrl = 'nexus.srikantheswar.online:8081'
+        
     }
     stages {
         stage('Build') { 
