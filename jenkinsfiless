@@ -19,8 +19,6 @@ pipeline {
                 sh """
                     echo 'this is testing'
                     echo  "print my version ${params.appversion}"
-
-
                 """
             }
         }
