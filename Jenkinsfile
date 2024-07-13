@@ -44,15 +44,15 @@ pipeline {
 
         }
             }
-        //  stage ('deploy') {
-        //     steps {
-        //     sh """
-        //         cd terraorm
-        //         terraform apply -auto-approve
-        //     """
+         stage ('deploy') {
+            steps {
+            sh """
+                cd terraorm
+                terraform apply -auto-approve
+            """
 
-        // }
-        //     }
+            }
+        }
     }
         
     
